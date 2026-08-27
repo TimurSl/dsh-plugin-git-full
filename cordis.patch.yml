@@ -1,6 +1,6 @@
 - insert:
     - id: dsh-git-workspace-plugin
-      name: ./index.js
+      name: ./node_modules/dsh-git-workspace-plugin/index.js
       config:
         routePrefix: /plugins/dsh-git
         credentialRef: DSH_GIT_SSH_PRIVATE_KEY

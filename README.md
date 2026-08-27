@@ -21,7 +21,9 @@ Example package source:
 git+https://github.com/YOUR-ORG/dsh-git-workspace-plugin.git
 ```
 
-The plugin bundle manifest is in `cordis.patch.yml`. Its default route is `/plugins/dsh-git` and it uses the DSH credential reference `DSH_GIT_SSH_PRIVATE_KEY` for managed and imported keys.
+The plugin bundle manifest is in `cordis.patch.yml`. It resolves the host entry from the Web profile installation at `./node_modules/dsh-git-workspace-plugin/index.js`, rather than the profile-root `./index.js` that caused the startup failure. Its default route is `/plugins/dsh-git` and it uses the DSH credential reference `DSH_GIT_SSH_PRIVATE_KEY` for managed and imported keys.
+
+After updating the Git source in NixOS, rebuild the derivation and restart the `deepseek-harness.service`. Install this package into the Web profile (so that profile has `node_modules/dsh-git-workspace-plugin`) before starting the service.
 
 ## Security behavior
 
