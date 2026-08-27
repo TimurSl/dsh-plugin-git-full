@@ -1,0 +1,9 @@
+- insert:
+    - id: dsh-git-workspace-plugin
+      name: ./index.js
+      config:
+        routePrefix: /plugins/dsh-git
+        credentialRef: DSH_GIT_SSH_PRIVATE_KEY
+        keyDirectory: ~/.dsh/git-keys
+        managedKeyFilename: id_ed25519
+        mutationConfirmations: true
